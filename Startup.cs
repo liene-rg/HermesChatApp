@@ -8,10 +8,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Owin;
+using Owin;
+using SignalRChat.Hubs;
 
 namespace HermesChatApp
 {
@@ -20,7 +24,11 @@ namespace HermesChatApp
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
+            
         }
+
+
 
         public IConfiguration Configuration { get; }
 
@@ -32,9 +40,17 @@ namespace HermesChatApp
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
+            services.AddAuthentication().AddFacebook(facebookOptions =>
+            {
+                facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
+                facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+            });
+
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
+
+            services.AddSignalR(); // from internet 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +73,14 @@ namespace HermesChatApp
             app.UseRouting();
 
             app.UseAuthentication();
+
+            app.UseMvc();
+
+            app.UseEndpoints(builder =>
+            {
+                builder.MapHub<Chat>("/chat");
+            });
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -66,6 +90,9 @@ namespace HermesChatApp
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+
+            
+
         }
     }
 }

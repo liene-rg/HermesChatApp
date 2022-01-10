@@ -13,6 +13,12 @@ namespace HermesChatApp.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
+
+        public ActionResult Chat()
+        {
+            return View(); // from the internet 
+        }
+
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
