@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace HermesChatApp.Controllers
 {
+    [RequireHttps]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -16,7 +17,7 @@ namespace HermesChatApp.Controllers
 
         public ActionResult Chat()
         {
-            return View(); // from the internet 
+            return View(); // tutorial
         }
 
         public HomeController(ILogger<HomeController> logger)
@@ -24,7 +25,7 @@ namespace HermesChatApp.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index()  // this displays the page 
         {
             return View();
         }

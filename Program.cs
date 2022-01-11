@@ -22,5 +22,8 @@ namespace HermesChatApp
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+       
+
+
     }
 }
