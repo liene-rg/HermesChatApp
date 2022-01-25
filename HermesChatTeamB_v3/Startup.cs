@@ -18,13 +18,15 @@ namespace HermesChatTeamB_v3
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("AzureConnection")));
 
             services.AddIdentity<User, IdentityRole>()
-            .AddEntityFrameworkStores<ApplicationContext>()
+            .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
             services.AddControllersWithViews();
+
+
         }
 
         public void Configure(IApplicationBuilder app)
