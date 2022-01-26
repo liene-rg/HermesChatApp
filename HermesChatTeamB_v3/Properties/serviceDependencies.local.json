@@ -3,6 +3,12 @@
     "secrets1": {
       "type": "secrets.user"
     },
+    "mssql2": {
+      "secretStore": "LocalSecretsFile",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/hermeschatteamb-v3dbserver/databases/HermesChatTeamB_v3",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:AzureConnection"
+    },
     "mssql1": {
       "secretStore": "LocalSecretsFile",
       "resourceId": null,
