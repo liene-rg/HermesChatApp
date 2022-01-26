@@ -5,6 +5,11 @@
       "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/hermeschatteamb-v3dbserver/databases/HermesChatTeamB_v3",
       "type": "mssql.azure",
       "connectionId": "ConnectionStrings:AzureConnection"
+    },
+    "mssql1": {
+      "secretStore": "AzureAppSettings",
+      "type": "mssql.onprem",
+      "connectionId": "ConnectionStrings:DefaultConnection"
     }
   }
 }
