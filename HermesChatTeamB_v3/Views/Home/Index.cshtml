@@ -47,10 +47,10 @@
 				   asp-for="Password" />
 			<span asp-validation-for="Password"></span>
 		</div>
-		<div>
+		@*<div>
 			<label asp-for="RememberMe"></label><br />
 			<input asp-for="RememberMe" />
-		</div>
+		</div>*@
 		<div>
 			<input asp-controller="Account" asp-action="ForgotPassword" type="submit" value="Forgot Password?" />
 		</div>
