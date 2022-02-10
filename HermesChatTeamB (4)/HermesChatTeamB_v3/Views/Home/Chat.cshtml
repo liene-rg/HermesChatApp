@@ -1,0 +1,84 @@
+﻿@model Chat
+
+<div class="chat-body">
+    @foreach (var message in Model.Messages)
+   {
+       <div class="message">
+           <header>@message.Name:</header>
+           <p>@message.Text</p>
+           <footer>@message.Timestamp</footer>
+           </div>
+   }
+</div>
+
+<form class="chat-input" onsubmit="sendMessage(event)" asp-controller="Home" asp-action="CreateMessage">
+    <input type="hidden" name="chatId" value="@Model.Id" >
+    <input type="text" name="message" id="message-input" />
+    <button type="submit">Send</button>
+</form>
+
+ 
+
+@section scripts {
+   @* <script src="~/dist/browser/signalr.min.js"></script>
+    <script src="~/wwwroot/js/signalr/dist/browser/signalr.js"></script>*@
+@*   <script src="~/js/signalr.js"></script>
+   <script src="~/js/chat.js"></script>*@
+
+   <script src="~/js/signalr.js"></script>
+<script src="~/js/chat.js"></script>
+ @*  <script src="~/js/site.js"></script>*@
+   <script src="~/js/messageBuilder.js"></script>
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+@*
+  <script>
+let connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").buil();
+
+    let connectionId = '';
+
+    connection.on("ReceiveMessage",function(data)
+    {
+        let message = messageBuilder()
+    .createMessage()
+    .withHeader(data.name)
+    .withParagraph(data.text)
+    .withFooter(data.timestamp)
+    .build();
+
+    document.querySelector('chat-body').append(message);
+
+   })
+
+
+    connection.start()
+    .then(function (){
+        connection.invoke('joinRoom', '@Model.Id');
+   })
+    .catch(function (err) {
+        console.log(err)
+    })
+
+    window.addEventListener('onunload', function(){
+        connection.invoke('leaveRoom', '@Model.Id');
+   })
+
+   
+let sendMessage = function (event)
+{
+        event.preventDefault();
+
+
+    let data = new FormData(event.target);
+    document.getElementById('message-input').value = '';
+    axious.post('/Home/SendMessage', data)
+       .then(res => {
+        console.log("Message sent", res);
+       })
+       .catch(err => {
+        console.log("Failed to send the message", err);
+       })
+}
+    </script> *@
+}

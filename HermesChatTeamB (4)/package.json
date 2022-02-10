@@ -1,0 +1,19 @@
+{
+  "name": "ChatFromAzure2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://dev.azure.com/anitavlasova1910/HermesChatApp/_git/HermesChatTeamB"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@microsoft/signalr": "^6.0.2"
+  }
+}

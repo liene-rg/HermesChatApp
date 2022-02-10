@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HermesChatApp</title>
+    
+    <link rel="stylesheet" href="~/css/site.css">
+
+</head>
+
+<body>
+     @if (User.Identity.IsAuthenticated)
+    {
+        <div class="navbar">
+            <a asp-controller="Home" asp-action="Index">Home</a>
+            <a asp-controller="Home" asp-action="Find">Online Users</a>
+            <a asp-controller="Home" asp-action="Private">Private chat</a>
+
+            <p>@User.Identity.Name</p>
+
+            <form method="post" asp-controller="Account" asp-action="LogOff">
+                <input type="submit" value="Sign Out" />
+            </form>
+
+        </div>
+    }
+
+        <div class="main">
+            @if (User.Identity.IsAuthenticated)
+            {
+                <vc:room></vc:room>
+            }
+        <div class="chat">
+            @RenderBody()
+        </div>
+	
+
+    </div> 
+
+    
+    <div class="modal" id="create-room-modal">
+        <form asp-controller="Home" asp-action="CreateRoom" class="modal-body">
+            <button type="button" class="close" onclick="closeModal()">X</button>
+            <header>Create Room</header>
+
+            <div>
+                <input name="name">
+            </div>
+            <footer>
+                <button>Create</button>
+            </footer>
+        </form>
+    </div>
+
+    @if (!User.Identity.IsAuthenticated)
+   {
+       <footer class="border-top" footer text-muted">
+
+           <div class="container">
+               &copy; 2022 - Hermes Chat - <a asp-area="" asp-controller="Account" asp-action="Privacy">Privacy</a>
+           </div>
+       </footer>
+   }
+
+    <script src="~/js/chat.js"></script>
+
+    @RenderSection("Scripts", false)
+
+</body>
+
+</html>
