@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
-using HermesChatTeamB_v3.Models;
+using DLL.Models;
 
-namespace HermesChatTeamB_v3.Models
+
+namespace DLL.Data
 {
     public class ApplicationDbContext : IdentityDbContext<User>
     {

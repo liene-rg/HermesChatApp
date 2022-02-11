@@ -1,4 +1,4 @@
-﻿namespace HermesChatTeamB_v3.Models
+﻿namespace DLL.Models
 {
     public class ChatUser 
     {

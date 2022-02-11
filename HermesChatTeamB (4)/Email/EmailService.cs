@@ -2,7 +2,7 @@
 using MailKit.Net.Smtp;
 using System.Threading.Tasks;
 
-namespace HermesChatTeamB_v3
+namespace Email
 {
     public class EmailService
     {

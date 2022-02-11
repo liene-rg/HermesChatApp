@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using DLL.Models;
 
-namespace HermesChatTeamB_v3.ViewModels
+namespace HermesChatTeamB_v3.ViewFolder
 {
     public class RegisterViewModel
     {

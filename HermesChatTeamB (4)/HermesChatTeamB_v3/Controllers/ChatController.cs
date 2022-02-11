@@ -1,5 +1,6 @@
 ﻿using HermesChatTeamB_v3.Hubs;
-using HermesChatTeamB_v3.Models;
+using DLL.Models;
+using DLL.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;

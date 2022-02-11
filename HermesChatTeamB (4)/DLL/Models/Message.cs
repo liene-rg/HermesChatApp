@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HermesChatTeamB_v3.Models
+namespace DLL.Models
 {
     public class Message
     {
@@ -13,3 +13,4 @@ namespace HermesChatTeamB_v3.Models
         public Chat Chat { get; set; }
     }
 }
+

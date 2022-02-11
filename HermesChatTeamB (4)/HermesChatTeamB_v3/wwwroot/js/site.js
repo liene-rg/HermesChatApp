@@ -29,7 +29,7 @@ window.addEventListener("onunload", function () {
     connection.invoke("leaveRoom", "@Model.Id");
 });
 
-let sendMessage = function (event);
+let sendMessage = function (event)
 {
     event.preventDefault();
 

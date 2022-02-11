@@ -1,4 +1,5 @@
-using HermesChatTeamB_v3.Models;
+using DLL.Models;
+using DLL.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;

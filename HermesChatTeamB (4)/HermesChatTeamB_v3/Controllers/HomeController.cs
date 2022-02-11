@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
+using DLL.Data;
+using DLL.Models;
 
 namespace HermesChatTeamB_v3.Controllers
 {
@@ -41,7 +43,7 @@ namespace HermesChatTeamB_v3.Controllers
 
 
         [HttpGet("{id}")]
-        public ActionResult Chat(int id) 
+        public ActionResult Chat(int id)
         {
             var chat = _context.Chats
                  .Include(x => x.Messages)
@@ -115,7 +117,7 @@ namespace HermesChatTeamB_v3.Controllers
 
         public async Task<IActionResult> CreatePrivateRoom(string userId)
         {
-            var chat = new Models.Chat
+            var chat = new DLL.Models.Chat
             {
                 Type = ChatType.Private
             };

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
 
-namespace HermesChatTeamB_v3.Models
+namespace DLL.Models
 {
     public class User : IdentityUser
 
@@ -13,4 +13,5 @@ namespace HermesChatTeamB_v3.Models
         public ICollection<ChatUser> Chats { get; set; }
         
     }
+
 }

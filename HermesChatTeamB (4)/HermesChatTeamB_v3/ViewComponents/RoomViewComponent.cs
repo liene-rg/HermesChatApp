@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Security.Claims;
-using HermesChatTeamB_v3.Models;
+using DLL.Models;
+using DLL.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 

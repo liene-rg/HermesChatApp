@@ -1,7 +1,9 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using HermesChatTeamB_v3.ViewModels;
-using HermesChatTeamB_v3.Models;
+using HermesChatTeamB_v3.ViewFolder;
+using DLL.Models;
+using DLL.Data;
+using Email;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
 

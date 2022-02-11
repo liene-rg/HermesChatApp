@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace HermesChatTeamB_v3.Models
+namespace DLL.Models
 {
     public class Chat
     {
@@ -16,4 +16,5 @@ namespace HermesChatTeamB_v3.Models
         public ICollection<Message> Messages { get; set; }
         public ICollection<ChatUser> Users { get; set; }
     }
+
 }
