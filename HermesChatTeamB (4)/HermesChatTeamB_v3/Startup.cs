@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using HermesChatTeamB_v3.Hubs;
 using Newtonsoft.Json;
+using DLL.Repository;
 
 
 namespace HermesChatTeamB_v3
@@ -32,6 +33,8 @@ namespace HermesChatTeamB_v3
             .AddDefaultTokenProviders();
 
             services.AddControllersWithViews();
+
+            services.AddTransient<IChatRepo, ChatRepo>();
 
             services.AddSignalR();
 
