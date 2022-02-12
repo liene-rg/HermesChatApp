@@ -1,0 +1,83 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    background-image: url("");
+    background-size: cover;
+    background-color: #aaccee;
+}
+
+.wrapper {
+    background: #aaccee;
+    max-width: var(--wrapper-width, 500px);
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 30px;
+}
+
+.title {
+    text-align: center;
+    margin-top: 40px;
+    padding-bottom: 15px;
+    color: darkblue;
+    font-family: 'Brush Script MT';
+    font-size: 45px;
+}
+
+.inputgroup {
+    background: #bbddee;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family: Gotham SSm A;
+    font-size: 18px
+}
+
+.field-validation-error {
+    display: none !important;
+}
+
+.form-control {
+    border: 1px solid darkolivegreen;
+    background: #F0F8FF;
+    border-radius: 5px;
+    height: 45px;
+}
+
+.support {
+    padding-top: 15px;
+}
+
+.login {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    width: 310px;
+    height: 45px;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: #ba52b7;
+    background: #ffbb00;
+    font-weight: normal;
+    font-size: 20px;
+    color: darkblue;
+    letter-spacing: 1px;
+}
+
+.register {
+    background: #bbddee;
+    border: none;
+    font-size: 20px;
+    font-style: italic;
+    color: darkblue;
+    font-weight: bolder
+}
+.text-danger validation-summary-errors {
+    
+}
+
+.text-danger {
+}

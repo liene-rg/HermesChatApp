@@ -12,30 +12,31 @@
 <h2 class="title">New User Registration</h2>
 
 <div class="inputgroup">
+	<div asp-validation-summary="All" class="text-danger"></div>
 		<form method="post" asp-controller="Account" asp-action="Register">
 			<div asp-validation-summary="ModelOnly"></div>
 			<div>
 				<label asp-for="Email">
 
-					<i class="fa fa-envelope" i style="color: darkblue; font-size: 20px"></i>
+					<i class="fa fa-envelope" i style="color: darkblue; font-size: 15px"></i>
 				</label>
 				<input class="form-control" name="email" id="email" placeholder="e-mail" asp-for="Email" />
 				<span asp-validation-for="Email"></span>
 			</div>
 			<div>
 				<label asp-for="Password">
-					<i class="fa fa-unlock-alt" i style="color: darkblue; font-size: 25px; padding-top:15px;"></i>
+					<i class="fa fa-unlock-alt" i style="color: darkblue; font-size: 20px; padding-top:28px;"></i>
 				</label>
 				<input class="form-control" name="password" id="Input1" placeholder="password" asp-for="Password" />
-				<input type="checkbox" onclick="myFunction1()" /> Show Password<br />
+				<input type="checkbox" onclick="myFunction1()" /> Show Password
 				<span asp-validation-for="Password"></span>
 			</div>
 			<div>
 				<label asp-for="PasswordConfirm">
-					<i class="fa fa-unlock-alt" i style="color: darkblue; font-size: 25px; padding-top:15px;"></i>
+					<i class="fa fa-unlock-alt" i style="color: darkblue; font-size: 20px; padding-top:5px;"></i>
 				</label><br />
 				<input class="form-control" name="passwordconfirm" id="Input2" placeholder="confirm password" asp-for="PasswordConfirm" />
-				<input type="checkbox" onclick="myFunction2()" /> Show Password<br />
+				<input type="checkbox" onclick="myFunction2()"/> Show Password
 				<span asp-validation-for="PasswordConfirm"></span>
 			</div>
 			<div>

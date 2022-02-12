@@ -12,17 +12,17 @@ body {
     color: darkblue;
     font-family: Gotham SSm A;
     font-size: 40px;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .inputgroup {
     max-width: var(--wrapper-width, 380px);
-    height: 550px;
+    height: fit-content;
     margin-top: 10px;
     margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 25px;
+    padding-top: 30px;
     padding-left: 35px;
     padding-right: 35px;
     background: #bbddee;
@@ -50,5 +50,15 @@ body {
     font-size: 20px;
     color: darkblue;
     letter-spacing: 1px;
-    font-family: Gotham SSm A
+    font-family: Gotham SSm A;
+    margin-bottom: 55px;
+}
+
+.field-validation-error{
+    display:none !important;
+}
+
+.validation-summary-errors {
+    color: orangered;
+    font-size: 13.5px;
 }
