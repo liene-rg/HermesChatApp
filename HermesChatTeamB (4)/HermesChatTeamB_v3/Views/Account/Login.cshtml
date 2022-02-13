@@ -9,91 +9,67 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-	
 </head>
 <body>
-
-<!--<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>-->
-	@*<form action="action_page.php" method="post" class="text-center">
-					<div class="imgcontainer">
-					<img src="img_avatar2.png" alt="Avatar" class="avatar">
-					</div>
-					</form>*@
-
-<div class="wrapper">
-			<h2 class="title">Welcome to Hermes Chat</h2>
-			<form method="post" asp-controller="Account" asp-action="Login">								
-				<div class="inputgroup">
-					<div asp-validation-summary="All" class="text-danger"></div>
-					<label for="email">
-						<i class="fa fa-envelope" i style="color: darkblue; font-size: 15px;margin-top: 35px;"></i>
-					</label>
+	<div class="wrapper">
+		<h2 class="title">Welcome to Hermes Chat</h2>
+		<form method="post" asp-controller="Account" asp-action="Login">
+			<div class="inputgroup">
+				<div asp-validation-summary="All" class="text-danger"></div>
+				<label for="email">
+					<i class="fa fa-envelope" i style="color: darkblue; font-size: 15px;margin-top: 5px;"></i>
+				</label><br />
 					<input type="email" class="form-control" name="email" id="email" placeholder="e-mail"
-						   asp-for="Email" />
+					asp-for="Email" /><br />
 					<span asp-validation-for="Email"></span>
 					<label for="password">
 						<i class="fa fa-unlock-alt" i style="color: darkblue; font-size: 20px; padding-top: 25px;"></i>
-					</label>
-					<input type="password" class="form-control" value="" name="password" id="Input" placeholder="password"
-						   asp-for="Password" />
-					<span asp-validation-for="Password"></span>
-					<div class="click" style="padding-top:10px"></div>
-					<input type="checkbox" onclick="myFunction()" /> Show Password
-
-					<button class="login" type="submit" value="Login">Sign In</button>
-
-					<div class="support">
-						<style>
-							.support {
-								padding-top: 5px;
-							}
-						</style>
-						<input asp-for="RememberMe" />
-						<label asp-for="RememberMe" style="padding-right: 60px;"></label>
-
-						<input asp-controller="Account" asp-action="ForgotPassword"
-							   ForgotPassword type="submit" value="Forgot Password?" ;
-							   style="background: #bbddee; border: none;" />
-
-						<label for="submit"> Haven`t registered yet? Click </label>
-						<input asp-controller="Account" asp-action="Register" type="submit" value="here." ;
-							   style="
-							background: #bbddee;
-							border: none;
-							font-size:20px;
-							font-style: italic;
-							color: darkblue;
-							font-weight: bolder" />
-					</div>
-					<a href="#" class="fb btn" style="padding-top: 15px; padding-bottom: 40px;">
-						<i class="fa fa-facebook fa-fw"></i> Login with Facebook
-					</a>
-				</div>
-			</form>
+					</label><br />
+						<input type="password" class="form-control" value="" name="password" id="Input" placeholder="password"
+						asp-for="Password" />
+						<span asp-validation-for="Password"></span>
+						<div class="click" style="padding-top:10px"></div>
+						<input type="checkbox" onclick="myFunction()" /> Show Password
+						<button class="login" type="submit" value="Login">Sign In</button>
+						<div class="support">
+							@*<input asp-for="RememberMe" />
+							<label asp-for="RememberMe" style="padding-right: 60px;"></label>*@
+							<input class="forgotPassword" asp-controller="Account" asp-action="ForgotPassword"
+							ForgotPassword type="submit" value="Forgot Password?"/><br/>
+							<label for="submit" style="padding-left: 5px;"> Haven`t registered yet? Click </label>
+							<input  class="register" asp-controller="Account" asp-action="Register" type="submit" value="here."/>
+						</div>
+						@*<a href="#" class="fb btn" style="padding-top: 15px; padding-bottom: 40px;">
+							<i class="fa fa-facebook fa-fw"></i> Login with Facebook
+						</a>	*@		
+			</div>
+		</form>
 	</div>
+</body>
+</html>
 
 
 @if (User.Identity.IsAuthenticated)
 {
-						<p>@User.Identity.Name</p>
+								<p>@User.Identity.Name</p>
 
-						<form method="post" asp-controller="Account">
-							<input type="submit" value="Sign Out" />
-						</form>
+								<form method="post" asp-controller="Account">
+									<input type="submit" value="Sign Out" />
+								</form>
 }
 
-else
-{
+@*else
+	{
 
-	@*<button type="submit">  Chat  </button>
-
-
-		<a href="~/Home/Chat.cshtml">Chat</a>
+	<button type="submit">  Chat  </button>
 
 
-		<a asp-controller="Account" asp-action="Login">Login</a>
-		<a asp-controller="Account" asp-action="Register">Register</a>*@
-}
+	<a href="~/Home/Chat.cshtml">Chat</a>
+
+
+	<a asp-controller="Account" asp-action="Login">Login</a>
+	<a asp-controller="Account" asp-action="Register">Register</a>
+	}*@
 
 <script>
 	function myFunction() {
@@ -109,5 +85,12 @@ else
 
 <script src="~/js/signalr/dist/browser/signalr.js"></script>
 <script src="~/js/chat.js"></script>
-</body>
-</html>
+
+
+
+<!--<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>-->
+@*<form action="action_page.php" method="post" class="text-center">
+	<div class="imgcontainer">
+	<img src="img_avatar2.png" alt="Avatar" class="avatar">
+	</div>
+	</form>*@
