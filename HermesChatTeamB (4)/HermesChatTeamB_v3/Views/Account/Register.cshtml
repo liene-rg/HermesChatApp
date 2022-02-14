@@ -1,33 +1,33 @@
-﻿@model HermesChatTeamB_v3.ViewFolder.RegisterViewModel
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
+	@model HermesChatTeamB_v3.ViewFolder.RegisterViewModel
+
 <head>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/css/register.css" />
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="~/css/register.css" />
+	
 </head>
 <body>
-<h2 class="title">New User Registration</h2>
-
+<h2 class="title">Registration</h2>
 <div class="inputgroup">
 	<div asp-validation-summary="All" class="text-danger"></div>
 		<form method="post" asp-controller="Account" asp-action="Register">
-			<div asp-validation-summary="ModelOnly"></div>
+			@*<div asp-validation-summary="ModelOnly"></div>*@
 			<div>
 				<label asp-for="Email">
-
 					<i class="fa fa-envelope" i style="color: darkblue; font-size: 15px"></i>
-				</label>
+				</label><br />
 				<input class="form-control" name="email" id="email" placeholder="e-mail" asp-for="Email" />
 				<span asp-validation-for="Email"></span>
 			</div>
 			<div>
 				<label asp-for="Password">
-					<i class="fa fa-unlock-alt" i style="color: darkblue; font-size: 20px; padding-top:28px;"></i>
-				</label>
-				<input class="form-control" name="password" id="Input1" placeholder="password" asp-for="Password" />
+					<i class="fa fa-unlock-alt" i style="color: darkblue; font-size: 20px; padding-top:22px;"></i>
+				</label><br />
+				<input class="form-control" name="password" id="Input1" placeholder="password" asp-for="Password" /><br />
 				<input type="checkbox" onclick="myFunction1()" /> Show Password
 				<span asp-validation-for="Password"></span>
 			</div>
@@ -35,7 +35,7 @@
 				<label asp-for="PasswordConfirm">
 					<i class="fa fa-unlock-alt" i style="color: darkblue; font-size: 20px; padding-top:5px;"></i>
 				</label><br />
-				<input class="form-control" name="passwordconfirm" id="Input2" placeholder="confirm password" asp-for="PasswordConfirm" />
+				<input class="form-control" name="passwordconfirm" id="Input2" placeholder="confirm password" asp-for="PasswordConfirm" /><br />
 				<input type="checkbox" onclick="myFunction2()"/> Show Password
 				<span asp-validation-for="PasswordConfirm"></span>
 			</div>
@@ -44,6 +44,8 @@
 			</div>
 		</form>
 	</div>
+</body>
+</html>
 
 	<script>
 		function myFunction1() {
@@ -65,5 +67,3 @@
 			}
 		}
 	</script>
-</body>
-</html>

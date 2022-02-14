@@ -1,28 +1,25 @@
-﻿@{
+﻿<!DOCTYPE html>
+<html lang="en">
+	
+	@{
 	ViewData["Title"] = "Privacy Policy";
 }
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-	body {
-		background-image: url("");
-		background-size: cover;
-		background-color: #F0F8FF;
+<head>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/css/privacy.css" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	@*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">*@
+</head>
+<body>
+	@{
+		ViewData["Title"] = "Privacy Policy";
 	}
-</style>
-<h1>@ViewData["Title"]</h1>
-<style>
-	h1 {
-		color: darkblue;
-		/*font-family: Castellar;*/
-		margin-top: 50px;
-		font-size: 40px;
-		font-family: Gotham SSm A;		
-	}
-</style>
 
-<div class="policy>" ; style="margin-top: 30px; font-family: Gotham SSm A; font-size: 20px;">
-	<div align="justify">
+	<h2 class="title">Privacy Policy</h2>
+
+	<div class="policy">
 		<p>Hermes Chat is strongly committed to protecting your privacy and complying with your choices.</p>
 		<p>Your information will not be shared, rented or sold to any third party.</p>
 		<p>
@@ -40,6 +37,8 @@
 			If at any point we decide to use your information in a manner different
 			from that stated at the time it was collected, we will notify you by email.
 		</p>
-		<p>If you have questions or comments about this privacy policy, please email us or write us at:_______</p>
+		<p>If you have questions or comments about this privacy policy, please email us or write us at:			
+			<a href="mailto:abc@example.com">hermeschatteamb@gmail.com</a>. </p>
 	</div>
-</div>
+</body>
+</html>

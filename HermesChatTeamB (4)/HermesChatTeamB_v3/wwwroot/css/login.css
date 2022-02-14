@@ -31,9 +31,10 @@ body {
     margin-top: 40px;
     padding-bottom: 5px;
     color: darkblue;
-    font-family: Constantia;
+    font-family: 'Script MT';
     font-style: italic;
     font-size: 35px;
+    font-weight: lighter 100;
 }
 
 .inputgroup {
