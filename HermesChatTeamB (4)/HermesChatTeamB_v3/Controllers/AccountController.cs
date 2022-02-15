@@ -78,11 +78,49 @@ namespace HermesChatTeamB_v3.Controllers
                 return View("Error");
         }
 
+        //[HttpGet]
+        //public IActionResult Login(string returnUrl = null)
+        //{
+        //    return View(new LoginViewModel { ReturnUrl = returnUrl });
+        //}
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Login(LoginViewModel model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        var user = await _userManager.FindByNameAsync(model.Email);
+        //        if (user != null)
+        //        {
+        //            // check if email is confirmed or not
+        //            if (!await _userManager.IsEmailConfirmedAsync(user))
+        //            {
+        //                ModelState.AddModelError(string.Empty, "You email has not been confirmed");
+        //                return View(model);
+        //            }
+        //        }
+
+        //        var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
+        //        if (result.Succeeded)
+        //        {
+        //            return RedirectToAction("Index", "Home");
+        //        }
+        //        else
+        //        {
+        //            ModelState.AddModelError("", "Incorrect login and/or password");
+        //            //return RedirectToAction("Login", "Account"); 
+        //        }
+        //    }
+        //    return View(model);
+        //}
+
         [HttpGet]
-        public IActionResult Login(string returnUrl = null)
+        public IActionResult Login(string returnUrl = "")
         {
             return View(new LoginViewModel { ReturnUrl = returnUrl });
         }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -93,8 +131,8 @@ namespace HermesChatTeamB_v3.Controllers
                 var user = await _userManager.FindByNameAsync(model.Email);
                 if (user != null)
                 {
-                    // check if email is confirmed or not
-                    if (!await _userManager.IsEmailConfirmedAsync(user))
+                    // check if email is confirmed or not
+                    if (!await _userManager.IsEmailConfirmedAsync(user))
                     {
                         ModelState.AddModelError(string.Empty, "You email has not been confirmed");
                         return View(model);
@@ -104,16 +142,20 @@ namespace HermesChatTeamB_v3.Controllers
                 var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Home");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "Incorrect login and/or password");
-                    //return RedirectToAction("Login", "Account"); 
+                    if (!string.IsNullOrEmpty(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl))
+                    {
+                        return Redirect(model.ReturnUrl);
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index", "Home");
+                    }
                 }
             }
+            ModelState.AddModelError("", "Incorrect login and/or password");
             return View(model);
         }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]

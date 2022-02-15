@@ -14,9 +14,12 @@
 <body>
 	<div class="wrapper">
 		<h2 class="title">Welcome to Hermes Chat</h2>
-		<form method="post" asp-controller="Account" asp-action="Login">
+
+		<form method="post" asp-controller="Account" asp-action="Login"
+			asp-route-returnUrl="@Model.ReturnUrl">
 			<div class="inputgroup">
 				<div asp-validation-summary="All" class="text-danger"></div>
+				@*<div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
 				<label for="email">
 					<i class="fa fa-envelope" i style="color: darkblue; font-size: 15px;margin-top: 5px;"></i>
 				</label><br />
@@ -32,9 +35,10 @@
 						<div class="click" style="padding-top:10px"></div>
 						<input type="checkbox" onclick="myFunction()" /> Show Password
 						<button class="login" type="submit" value="Login">Sign In</button>
-						<div class="support">
-							@*<input asp-for="RememberMe" />
-							<label asp-for="RememberMe" style="padding-right: 60px;"></label>*@
+						<div class="support row">
+							<input asp-for="RememberMe" />
+							<label asp-for="RememberMe" style="padding-right: 60px;"></label>
+							<span asp-validation-for = "RememberMe"></span> 
 							<input class="forgotPassword" asp-controller="Account" asp-action="ForgotPassword"
 							ForgotPassword type="submit" value="Forgot Password?"/><br/>
 							<label for="submit" style="padding-left: 5px;"> Haven`t registered yet? Click </label>

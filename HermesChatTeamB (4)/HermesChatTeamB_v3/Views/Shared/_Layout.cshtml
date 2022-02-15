@@ -18,7 +18,18 @@
             <a asp-controller="Home" asp-action="Find">Online Users</a>
             <a asp-controller="Home" asp-action="Private">Private chat</a>
 
-            <p>@User.Identity.Name</p>
+            <div class="hello" style="margin-left: 350px;">  
+            <p>Hello, @User.Identity.Name!</p>
+            <style>
+                .hello {
+                    padding-top: 0.1rem;
+                    color: darkblue;
+		            font-family: Gotham SSm A;
+		            font-size: 18px;
+                   
+                }
+	</style>
+    </div>
 
             <form method="post" asp-controller="Account" asp-action="LogOff">
                 @*<input type="submit" value="Sign Out" />*@
