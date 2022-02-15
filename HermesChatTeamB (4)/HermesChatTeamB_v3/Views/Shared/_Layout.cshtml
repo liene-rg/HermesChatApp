@@ -21,9 +21,10 @@
             <p>@User.Identity.Name</p>
 
             <form method="post" asp-controller="Account" asp-action="LogOff">
-                <input type="submit" value="Sign Out" />
-            </form>
+                @*<input type="submit" value="Sign Out" />*@
+                <button class="signout" type="submit" value="Sign Out">Sign Out</button>
 
+            </form>            
         </div>
     }
 

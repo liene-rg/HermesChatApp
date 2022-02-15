@@ -4,28 +4,31 @@
 
 body {
     margin: 0;
-    height: 100vh;
-    width: 100vh;
+    height: auto;
+    width: auto;
     display: flex;
     flex-direction: column;
 }
 
 .navbar {
     /*background-color: #342742;*/
-    background-color: #6779b7;
+    background-color: #F0F8FF;
     z-index: 100;
     box-shadow: 0 1px 2px 0 #333;
     display: flex;
     flex-direction: row;
 }
+    /*will get applied to your div and then subsequently to everything that is within it*/
 
-    .navbar > a {
-        color: #eee;
-        text-decoration: none;
-        font-size: 18px;
-        padding-top: 0.8rem;
-        padding-left: 1rem;
-    }
+.navbar > a {
+    color: darkblue;
+    text-decoration: none;
+    font-size: 18px;
+    padding-top: 0.8rem;
+    padding-left: 1rem;
+    font-family: Gotham SSm A;
+}
+/*will only get applied to the <a > tag inside the div with class=navbar*/
 
 .main {
     flex-grow: 1;
@@ -33,15 +36,38 @@ body {
     flex-direction: row;
 }
 
+.signout {
+    font-family: Gotham SSm A;
+    /*margin-top: 15px;
+    margin-bottom: 15px;*/
+    width: 100px;
+    height: 35px;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: #ba52b7;
+    background: #ffbb00;
+    font-weight: normal;
+    /*font-size: 18px;*/
+    color: darkblue;
+    letter-spacing: 1px;
+    margin-left: 950px;
+    margin-top: 0.4rem;
+}
+
+    .signout:hover {
+        background-image: linear-gradient(to right, #93c0f7, #f5dea0, #ffd04f, #93c0f7);
+        box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+    }
+
 .side-menu {
-    background-color: #443554;
-    background-color: #6779b7;
+    background-color: #aaccee;
     min-width: 100px;
-    max-width: 100px;
+    max-width: 120px;
     z-index: 50;
     box-shadow: 1px 0 2px 0 #333;
     display: flex;
     flex-direction: column;
+    font-family: Gotham SSm A;
 }
 
 .room-button {
@@ -54,12 +80,13 @@ body {
     height: 68px;
     border-radius: 5px;
     box-shadow: 0 1px 3px 1px #333;
-   /* background-color: #57446b;*/
+    /* background-color: #57446b;*/
     background-color: #376a94;
 }
 
     .room-button > strong {
         font-size: 36px;
+        font-family: Gotham SSm A;
     }
 
     .room-button:hover {
@@ -74,7 +101,7 @@ body {
 }
 
 .chat-body {
-    background-color: #eee;
+    background-color: #aaccee;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -113,7 +140,7 @@ body {
     }
 
 .chat-input {
-    background-color: #443554;
+    background-color: #aaccee;
     min-height: 70px;
     max-height: 70px;
     z-index: 25;
@@ -180,3 +207,9 @@ body {
     .modal-body > footer {
         text-align: center;
     }
+
+.container {
+    position: fixed; 
+    left: 0;
+    bottom: 0;
+}
