@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HermesChatApp</title>
     <link rel="stylesheet" href="~/css/site.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
    
 </head>
  
@@ -14,11 +16,12 @@
      @if (User.Identity.IsAuthenticated)
     {
         <div class="navbar">
-            <a asp-controller="Home" asp-action="Index">Home</a>
-            <a asp-controller="Home" asp-action="Find">Online Users</a>
-            <a asp-controller="Home" asp-action="Private">Private chat</a>
+            <a asp-controller="Home" asp-action="Index">
+                <i class="fa fa-home" i style="color: #ffbb00; font-size: 35px; padding-top:10px"></i></a>
+            <a asp-controller="Home" asp-action="Find" style="padding-top: 20px;">Users</a>
+            <a asp-controller="Home" asp-action="Private" style="padding-top: 20px;">Private chat</a>
 
-            <div class="hello" style="margin-left: 350px;">  
+            <div class="hello" style="margin-left: 390px;">  
             <p>Hello, @User.Identity.Name!</p>
             <style>
                 .hello {
