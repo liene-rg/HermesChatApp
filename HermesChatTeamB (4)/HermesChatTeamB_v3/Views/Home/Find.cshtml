@@ -8,3 +8,57 @@
         </a>
     </div>
     }
+    
+<body>
+    <div id="inputForm">
+        <input type="text" id="message" />
+        <input type="button" id="sendBtn" value="Send" />
+    </div>
+    <div id="chatroom"></div>
+ 
+   
+    <script src="~/js/signalr.min.js"></script>
+    
+    <script>
+        const hubConnection = new signalR.HubConnectionBuilder()
+            .withUrl("/chathub")
+            .build();
+             
+        // receive message from the server
+        hubConnection.on('Receive', function (message,connectionId) {
+ 
+            // create element <b> for connectionId
+            let userNameElem = document.createElement("b");
+            userNameElem.appendChild(document.createTextNode(connectionId + ": "));
+ 
+            // create element <p> for user's message
+            let elem = document.createElement("p");
+            elem.appendChild(userNameElem);
+            elem.appendChild(document.createTextNode(message));
+ 
+            var firstElem = document.getElementById("chatroom").firstChild;
+            document.getElementById("chatroom").insertBefore(elem, firstElem);
+ 
+        });
+         
+        hubConnection.on('Notify', function (message) {
+             
+            // add the element for diagnostic message
+            let notifyElem = document.createElement("b");
+            notifyElem.appendChild(document.createTextNode(message));
+            let elem = document.createElement("p");
+            elem.appendChild(notifyElem);
+            var firstElem = document.getElementById("chatroom").firstChild;
+            document.getElementById("chatroom").insertBefore(elem, firstElem);
+        });
+         
+        // sending the message on the server
+        document.getElementById("sendBtn").addEventListener("click", function (e) {
+            let message = document.getElementById("message").value;
+            hubConnection.invoke('Send', message);
+        });
+        
+        hubConnection.start();
+    
+    </script>
+</body>
