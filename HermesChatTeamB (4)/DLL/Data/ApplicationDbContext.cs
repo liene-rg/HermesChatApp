@@ -29,12 +29,6 @@ namespace DLL.Data
 
         }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.EnableSensitiveDataLogging();
-        //}
-
-
     }
 }
 
