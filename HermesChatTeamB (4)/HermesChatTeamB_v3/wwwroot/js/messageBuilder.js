@@ -29,13 +29,13 @@ let messageBuilder = function () {
 
         withParagraph: function (text) {
             p = document.createElement("p")
-            p.appendChild(document.createTextNode(text + ':'))
+            p.appendChild(document.createTextNode(text))
             return this;
         },
 
         withFooter: function (text) {
             footer = document.createElement("footer")
-            footer.appendChild(document.createTextNode(text + ':'))
+            footer.appendChild(document.createTextNode(text))
             return this;
         },
 
